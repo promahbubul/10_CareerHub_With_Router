@@ -2,7 +2,11 @@ import Button from "../Button/Button";
 import Sidebarinfo from "./SidebarInfo";
 import SideBarHeading from "./SideBarHeading";
 
-const JobSideBar = ({ job }) => {
+const JobSideBar = ({ job, handleApplyJob, appliedJobs }) => {
+  const appledJob = appliedJobs?.find((id) => id == job?.id);
+
+  // console.log(appledJob);
+  console.log(appledJob);
   return (
     <div className="w-4/12">
       <div className="bg-gradient-to-r from-liner-from/10 p-[30px] rounded-lg to-liner-to/10">
@@ -29,7 +33,18 @@ const JobSideBar = ({ job }) => {
           />
         </div>
       </div>
-      <Button className={"w-full mt-6"}>Apply Now</Button>
+      {/* {appliedJobs.find()} */}
+
+      {!appledJob ? (
+        <Button
+          onClick={() => handleApplyJob(job?.id)}
+          className={"w-full mt-6"}
+        >
+          Apply Now
+        </Button>
+      ) : (
+        <p className="text-purple-600 textxl font-medium text-center mt-5 underline">Already Applied</p>
+      )}
     </div>
   );
 };
