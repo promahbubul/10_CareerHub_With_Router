@@ -2,9 +2,11 @@ import { useState } from "react";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import { useEffect } from "react";
 import FeatureJobCard from "./FeatureJobCard";
+import Button from "../Button/Button";
 
 const FeaturedJob = () => {
   const [jobs, setJobs] = useState([]);
+  const [dataLength, setDataLength] = useState(4);
 
   useEffect(() => {
     fetch("/data/jobs.json")
@@ -23,9 +25,18 @@ const FeaturedJob = () => {
         }
       />
       <div className="mt-8 grid grid-cols-2 gap-6">
-        {jobs?.map((job) => (
+        {jobs?.slice(0, dataLength)?.map((job) => (
           <FeatureJobCard job={job} key={job?.id} />
         ))}
+      </div>
+      <div
+        className={`text-center mt-10 ${
+          dataLength === jobs.length && "hidden"
+        }`}
+      >
+        <Button onClick={() => setDataLength(jobs?.length)}>
+          See All Jobs
+        </Button>
       </div>
     </div>
   );
