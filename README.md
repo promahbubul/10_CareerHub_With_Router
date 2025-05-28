@@ -1,12 +1,10 @@
-# React + Vite
+# 10 CareerHub With Router
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Job Application Website
+- using react router dom create multipage 
+- Applied job and store data in `localhost` and get data from `locathost`
+- multipage or routes website surge or vercel deploy error
+- surge:
+    create 200.html file in dist file and copy index.html file to dist file
+- vercel:
+    create `vercel.json` in root directory and copy and past below code
