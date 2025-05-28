@@ -6,9 +6,11 @@ const Navbar = () => {
     <div className="bg-gradient-to-r px-5 2xl:px-0 from-[#7E90FE]/5 to-[#9873FF]/5">
       <nav className="max-w-7xl mx-auto pt-14 pb-10 flex justify-between items-center">
         <div className="">
-          <h1 className="text-dark-1 font-manrope font-extrabold text-[32px]">
-            CareerHub
-          </h1>
+          <Link to={"/"}>
+            <h1 className="text-dark-1 font-manrope font-extrabold text-[32px]">
+              CareerHub
+            </h1>
+          </Link>
         </div>
         <div className="flex flex-row font-manrope text-base font-bold items-center gap-10 ">
           {navlinks.map((navItem) => (

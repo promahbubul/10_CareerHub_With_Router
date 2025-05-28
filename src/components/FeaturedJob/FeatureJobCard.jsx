@@ -2,9 +2,11 @@ import Button from "../Button/Button";
 import OutlineButton from "../OutlineButton/OutlineButton";
 import { FiMapPin } from "react-icons/fi";
 import { AiOutlineDollar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const FeatureJobCard = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -38,7 +40,9 @@ const FeatureJobCard = ({ job }) => {
         </p>
       </div>
       <div className="grow flex items-end h-auto ">
-        <Button>View Details</Button>
+        <Link to={`/jobs/${id}`}>
+          <Button className={"px-[18px] py-[11px]"}>View Details</Button>
+        </Link>
       </div>
     </div>
   );
